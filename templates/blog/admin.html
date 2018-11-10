@@ -13,12 +13,16 @@
         <div class="messages">
             <ul class="flashes">
                 {% for message in messages %}
-                    <li> {{ message }}</li>
+                <li>{{ message }}</li>
                 {% endfor %}
             </ul>
         </div>
         {% endif %}
         {% endwith %}
+        
+        <p>
+            Welcome, {{ session.username}} <a href="{{ url_for('logout')}}">logout</a>
+        </p>
     </div>
 </div>
 
