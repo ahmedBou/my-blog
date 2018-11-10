@@ -4,17 +4,18 @@ from blog.form import SetupForm
 from flask_blog import db
 from author.models import Author
 from blog.models import Blog
+from author.decorators import login_required
 
 @app.route('/')
 @app.route('/index')
 def index():
+    blogs = Blog.query.count()
+    if blogs == 0:
+        return redirect(url_for('setup'))
     return "hello world"
 
 @app.route('/admin')
 def admin():
-    blogs = Blog.query.count()
-    if blogs == 0:
-        return redirect(url_for('setup'))
     return render_template('blog/admin.html')
 
 @app.route('/setup', methods=('GET', 'POST'))
