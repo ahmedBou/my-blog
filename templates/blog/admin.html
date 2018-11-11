@@ -20,10 +20,6 @@
         {% endif %}
         {% endwith %}
         
-        <p>
-            Welcome, {{ session.username}} <a href="{{ url_for('logout')}}">logout</a>
-        </p>
-        
         <div class="post-list">
             {% for post in posts %}
             <div class="post-item">
@@ -42,4 +38,7 @@
 
 {% endblock %}
             
-
+        <!--<p>
+            Welcome, {{ session.username}} <a href="{{ url_for('logout')}}">logout</a>
+        </p>
+-->        
