@@ -4,6 +4,7 @@ from author.form import RegisterForm, LoginForm
 from author.models import Author
 from author.decorators import login_required
 import bcrypt
+
 @app.route('/login', methods=('GET', 'POST'))
 def login():
     form = LoginForm()
