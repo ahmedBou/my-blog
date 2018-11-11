@@ -32,7 +32,7 @@ class Post(db.Model):
             self.author_id = author.id
             self.title = title
             self.body = body
-            self.category = category
+            self.category_id = category.id
             self.slug = slug
             if publish_date is None:
                 self.publish_date = datetime.utcnow()
@@ -51,4 +51,4 @@ class Category(db.Model):
         self.name = name
 
     def __repr__(self):
-        return '<Category %r>' % self.name
+        return self.name
