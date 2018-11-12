@@ -14,7 +14,7 @@ migrate = Migrate(app, db)
 # Markdown
 md = Markdown(app, extensions=['fenced_code', 'tables'])
 
-#images
+# images
 uploaded_images = UploadSet('images', IMAGES)
 configure_uploads(app, uploaded_images)
 
